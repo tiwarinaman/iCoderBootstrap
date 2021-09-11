@@ -11,6 +11,31 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <title>iCoder - Haven for programmers</title>
+    
+    
+    <script>
+        function hitApi() {
+            alert("called");
+            var xhr = new XMLHttpRequest();
+
+            xhr.onload = function () {
+
+                if (xhr.status >= 200 && xhr.status < 300) {
+
+                    console.log("Success Data", JSON.parse(xhr.response));
+                } else {
+                    console.log('The request failed!');
+                }
+
+                console.log('This always runs...');
+            };
+
+            xhr.open('GET', 'https://gorest.co.in/public/v1/users');
+            xhr.send();
+        }
+    </script>
+    
+    
 </head>
 
 <body>
@@ -291,29 +316,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-    
-    
-    <script>
-    
-                function hitApi() {
-                     var xhr = new XMLHttpRequest();
-
-                    xhr.onload = function () {
-
-                        if (xhr.status >= 200 && xhr.status < 300) {
-
-                        console.log("Success Data", JSON.parse(xhr.response);)
-                        } else {
-                          console.log('The request failed!');
-                        }
-
-                        console.log('This always runs...');
-                    };
-
-                    xhr.open('GET', 'https://gorest.co.in/public/v1/users');
-                    xhr.send(); 
-            }
-    </script>
     
 </body>
 
